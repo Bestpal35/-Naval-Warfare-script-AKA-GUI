@@ -1,1 +1,22 @@
-print("hello")
+--made by bestfriend3567314
+
+local aux = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Upbolt/Hydroxide/revision/ohaux.lua"))()
+
+local scriptPath = .M1 Garand --[[ PARENTED TO NIL OR DESTROYED ]].TriggerScript
+local closureName = "reload"
+local upvalueIndex = 4
+local closureConstants = {
+	[1] = "PlayerGui",
+	[2] = "ScreenGui",
+	[3] = "WaitForChild",
+	[4] = "GunGui",
+	[5] = "Reloading...",
+	[6] = "Text"
+}
+
+local closure = aux.searchClosure(scriptPath, closureName, upvalueIndex, closureConstants)
+local value = math.huge --math.huge is an word that is bassacly infinite so you will have inf ammo
+
+
+-- DO NOT RELY ON THIS FEATURE TO PRODUCE 100% FUNCTIONAL SCRIPTS
+debug.setupvalue(closure, upvalueIndex, value)

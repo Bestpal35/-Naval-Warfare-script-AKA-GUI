@@ -1,22 +1,67 @@
---made by bestfriend3567314
+-- Gui to Lua
+-- Version: 3.2
 
-local aux = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Upbolt/Hydroxide/revision/ohaux.lua"))()
+-- Instances:
 
-local scriptPath = .M1 Garand --[[ PARENTED TO NIL OR DESTROYED ]].TriggerScript
-local closureName = "reload"
-local upvalueIndex = 4
-local closureConstants = {
-	[1] = "PlayerGui",
-	[2] = "ScreenGui",
-	[3] = "WaitForChild",
-	[4] = "GunGui",
-	[5] = "Reloading...",
-	[6] = "Text"
-}
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
 
-local closure = aux.searchClosure(scriptPath, closureName, upvalueIndex, closureConstants)
-local value = math.huge --math.huge is an word that is bassacly infinite so you will have inf ammo
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(0, 17, 255)
+Frame.Position = UDim2.new(0, 0, 0.818030059, 0)
+Frame.Size = UDim2.new(0, 143, 0, 118)
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.Position = UDim2.new(0.0979020968, 0, 0.233284637, 0)
+TextButton.Size = UDim2.new(0, 112, 0, 81)
+TextButton.Modal = true
+TextButton.Font = Enum.Font.PermanentMarker
+TextButton.Text = "\\nNaval Warfare"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+TextButton.MouseButton1Down:connect(function()
+	--made by bestfriend3567314
+
+	local aux = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Upbolt/Hydroxide/revision/ohaux.lua"))()
+
+	local scriptPath = .M1 Garand --[[ PARENTED TO NIL OR DESTROYED ]].TriggerScript
+	local closureName = "reload"
+	local upvalueIndex = 4
+	local closureConstants = {
+		[1] = "PlayerGui",
+		[2] = "ScreenGui",
+		[3] = "WaitForChild",
+		[4] = "GunGui",
+		[5] = "Reloading...",
+		[6] = "Text"
+	}
+
+	local closure = aux.searchClosure(scriptPath, closureName, upvalueIndex, closureConstants)
+	local value = math.huge --math.huge is an word that is bassacly infinite so you will have inf ammo
 
 
--- DO NOT RELY ON THIS FEATURE TO PRODUCE 100% FUNCTIONAL SCRIPTS
-debug.setupvalue(closure, upvalueIndex, value)
+	-- DO NOT RELY ON THIS FEATURE TO PRODUCE 100% FUNCTIONAL SCRIPTS
+	debug.setupvalue(closure, upvalueIndex, value)
+
+end)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+TextLabel.Position = UDim2.new(-0.00699300691, 0, -0.0040038228, 0)
+TextLabel.Size = UDim2.new(0, 143, 0, 28)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "USE AUTOCLICKER!!!!"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
